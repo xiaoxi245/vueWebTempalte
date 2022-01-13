@@ -1,21 +1,19 @@
-export default [
+const mycommonRouter = [
   {
-    path: '/users',
-    name: 'user-list',
-    component: () => import('@/views/layout/common'),
-    redirect: '/users/list',
-    children: [
-      {
-        path: 'list',
-        name: 'user-list',
-        component: () => import('@/views/user/list'),
-        meta: { title: '用户列表1' }
-      },
-      {
-        path: 'edit',
-        name: 'user-edit',
-        component: () => import('@/views/user/edit')
-      }
-    ]
+    path: '/',
+    name: 'Login',
+    component: () => import('@/views/Login')
+  },
+  {
+    path: '/list',
+    name: 'List',
+    component: () => import('@/views/user/list')
+  },
+  {
+    path: '/edit',
+    name: 'Edit',
+    component: () => import('@/views/user/edit')
   }
 ]
+
+export default mycommonRouter

@@ -21,28 +21,20 @@ requireContext.keys().forEach(fileName => {
   const routerModule = requireContext(fileName)
   routes = [...routes, ...(routerModule.default || routerModule)]
 })
-console.log(routes)
 
 const router = new Router({
   routes
 })
-
 // 动态添加路由
 router.addRoutes([
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
   }
 ])
+
+// 路由拦截
 // 添加路由的导航守卫
 router.beforeEach((to, from, next) => {
   Nprogress.start()

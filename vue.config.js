@@ -12,7 +12,10 @@ module.exports = {
   //         .set('api',path.resolve(__dirname,'./src/api'))
   //         .set('utils',path.resolve(__dirname,'./src/utils'))
 
-  // },
-
+  // },r
+  devServer: {
+    open: true
+  },
   lintOnSave: false
+
 }

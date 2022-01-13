@@ -22,3 +22,13 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### 缓存处理
+```
+store
+
+减少请求
+
+store.dispatch()
+```
+

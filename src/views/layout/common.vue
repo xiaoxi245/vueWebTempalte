@@ -1,15 +1,12 @@
 <template>
-  <div id="app">
-      <div id="nav">
-          User module
-      </div>
-    <router-view/>
+  <div>
+    <Header/>
   </div>
 </template>
 
 <script>
 export default {
-
+  name: 'Common'
 }
 </script>
 

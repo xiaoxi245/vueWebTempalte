@@ -1,18 +1,38 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home" :style="{height:homeHeight}">
+    <el-container>
+        <el-aside width="200px">Aside</el-aside>
+        <el-main>Main</el-main>
+    </el-container>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+// @ is an alias to /srcf
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  data () {
+    return {
+      homeHeight: ''
+    }
+  },
+  mounted () {
+    const height = window.innerHeight
+    console.log(height)
+    this.homeHeight = height
   }
+
 }
 </script>
+<style scoped>
+  .el-container{
+    height: 100%;
+  }
+  .el-aside{
+    border: 1px solid #cacaca;
+  }
+  .el-main{
+    border: 1px solid #cacaca;
+  }
+</style>

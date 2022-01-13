@@ -26,18 +26,16 @@ request.interceptors.request.use(
 )
 
 // 响应拦截器
-request.interceptors.response.use(
-  response => {
-    Nprogress.done()
-    return response
-  },
-  error => {
-    Message.error({
-      message: error.message
-    })
-    Nprogress.done()
-    return Promise.reject(error)
-  }
+request.interceptors.response.use(response => {
+  Nprogress.done()
+  return response
+}, error => {
+  Message.error({
+    message: error.message
+  })
+  Nprogress.done()
+  return Promise.reject(error)
+}
 )
 
 export default request
